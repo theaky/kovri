@@ -13,6 +13,8 @@ set(CORE_SRC
     "crypto/CryptoConst.cpp"
     "crypto/EdDSA25519.cpp"
     "crypto/Signature.cpp"
+    "crypto/Tunnel.cpp"
+    "transport/NTCP.cpp"
     "transport/NTCPSession.cpp"
     "transport/SSU.cpp"
     "transport/SSUData.cpp"
@@ -21,7 +23,6 @@ set(CORE_SRC
     "transport/UPnP.cpp"
     "tunnel/TransitTunnel.cpp"
     "tunnel/Tunnel.cpp"
-    "tunnel/TunnelCrypto.cpp"
     "tunnel/TunnelEndpoint.cpp"
     "tunnel/TunnelGateway.cpp"
     "tunnel/TunnelPool.cpp"
@@ -80,7 +81,6 @@ endif()
 include_directories("." "../")
 
 set(EDDSA_LIB "ed25519-ref10")
-
 add_subdirectory(crypto/ed25519)
 
 if(WITH_BOOST_LOG)
